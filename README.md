@@ -2,7 +2,7 @@
 
 Lumenfall is a made-up Atlantic inlet where warm rain drifts through the last amber light, and a tide bell tower keeps watch from a lone sea stack. This entry is a mid-century-inspired travel poster built entirely with inline SVG and CSS, then rendered by the make.fun harness.
 
-Run it with Node 22 after the harness has rendered `poster/poster.png`:
+`poster/poster.png` is the rendered artwork that the program ships. Run it with Node 22:
 
 ```sh
 MAKEFUN_OUTPUT_DIR=out node main.ts
