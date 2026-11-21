@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024, initial-scale=1">
+<title>Lumenfall — a place for the last light</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; margin: 0; overflow: hidden; }
+  body { background: #f1dfb9; }
+  .stage {
+    position: relative;
+    width: 1024px;
+    height: 1024px;
+    overflow: hidden;
+    color: #174b4d;
+    background: #f1dfb9;
+    font-family: Georgia, Palatino, "Iowan Old Style", serif;
+  }
+  .landscape { position: absolute; inset: 0; width: 1024px; height: 1024px; }
+  .title {
+    position: absolute;
+    z-index: 3;
+    top: 88px;
+    left: 92px;
+    margin: 0;
+    color: #174b4d;
+    font-size: 91px;
+    font-weight: 400;
+    line-height: .94;
+    letter-spacing: .105em;
+    text-shadow: 0 1px 0 rgba(255,245,216,.45);
+  }
+  .place-line {
+    position: absolute;
+    z-index: 3;
+    top: 190px;
+    left: 99px;
+    margin: 0;
+    color: #174b4d;
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: .22em;
+  }
+  .frame {
+    position: absolute;
+    z-index: 4;
+    inset: 30px;
+    border: 1px solid rgba(23,75,77,.56);
+    pointer-events: none;
+  }
+  .frame::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(23,75,77,.22);
+  }
+  .grain {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    opacity: .19;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(71,52,31,.38) .55px, transparent .75px);
+    background-size: 5px 5px;
+    mix-blend-mode: multiply;
+  }
+</style>
+</head>
+<body>
+<main class="stage" aria-label="A vintage travel poster for Lumenfall">
+  <svg class="landscape" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x2="0" y2="1">
+        <stop stop-color="#e7b962"/>
+        <stop offset=".54" stop-color="#f3d79e"/>
+        <stop offset="1" stop-color="#f0d8aa"/>
+      </linearGradient>
+      <linearGradient id="water" x2="0" y2="1">
+        <stop stop-color="#54817a"/>
+        <stop offset=".45" stop-color="#286566"/>
+        <stop offset="1" stop-color="#174b4d"/>
+      </linearGradient>
+      <linearGradient id="sun" x2="0" y2="1">
+        <stop stop-color="#f6d17b"/>
+        <stop offset="1" stop-color="#e98b54"/>
+      </linearGradient>
+      <clipPath id="posterClip"><rect width="1024" height="1024"/></clipPath>
+    </defs>
+    <g clip-path="url(#posterClip)">
+      <rect width="1024" height="1024" fill="url(#sky)"/>
+      <circle cx="715" cy="354" r="171" fill="url(#sun)"/>
+      <path d="M544 354a171 171 0 0 0 342 0" fill="none" stroke="#f4bd68" stroke-width="2" opacity=".65"/>
+      <path d="M552 397a163 163 0 0 0 326 0" fill="none" stroke="#f4bd68" stroke-width="2" opacity=".55"/>
+      <path d="M569 439a146 146 0 0 0 292 0" fill="none" stroke="#f4bd68" stroke-width="2" opacity=".46"/>
+      <path d="M595 477a120 120 0 0 0 240 0" fill="none" stroke="#f4bd68" stroke-width="2" opacity=".4"/>
+
+      <!-- Long, wind-drawn cloud banks: the warm rain is part of the place. -->
+      <path d="M77 329c48-31 97-26 139-3 48-28 100-17 130 9 34-4 64 7 82 25H79c-16-8-17-20-2-31Z" fill="#f6e5c1" opacity=".78"/>
+      <path d="M759 258c35-23 75-20 101-2 37-20 76-11 97 13 23-1 42 8 53 22H749c-12-10-8-23 10-33Z" fill="#f6e5c1" opacity=".68"/>
+      <path d="M42 372h173M94 388h118M825 316h130M867 331h105" stroke="#fff0d2" stroke-width="3" opacity=".68"/>
+
+      <!-- Fine diagonal rain catches the sunset. -->
+      <g stroke="#fff0d2" stroke-width="2" opacity=".55">
+        <path d="m184 421-17 54m48-40-15 46m65-51-18 58m45-39-15 46m-176 12-13 39m127-15-13 39m-75-6-10 31"/>
+        <path d="m889 384-15 48m46-32-16 52m68-34-13 40m-40 3-10 33m-65-10-11 37"/>
+      </g>
+
+      <!-- Far headlands dissolve into the weather at the horizon. -->
+      <path d="M0 541 76 508l72 18 81-47 85 34 76-26 82 46 80-34 94 17 72-38 94 34 79-20 73 32v114H0Z" fill="#b97b59" opacity=".66"/>
+      <path d="M0 574 111 542l71 21 90-31 81 38 85-24 88 29 75-29 89 22 88-36 94 25 77-16 75 32v91H0Z" fill="#769083"/>
+      <path d="M0 594 114 570l75 17 89-24 76 30 86-19 90 24 80-27 88 19 87-27 91 21 68-11 80 27v62H0Z" fill="#55796f"/>
+
+      <!-- Open water and the bright path leading to the beacon. -->
+      <path d="M0 625h1024v399H0Z" fill="url(#water)"/>
+      <path d="M682 625h64l202 399H463Z" fill="#e9a45f" opacity=".23"/>
+      <path d="M691 625h45l105 399H596Z" fill="#f3c37a" opacity=".23"/>
+      <g fill="none" stroke-linecap="round">
+        <g stroke="#e8c27d" opacity=".74">
+          <path d="M496 657h155M760 671h142M410 693h211M703 707h225M461 729h138M655 747h253M353 774h225M619 799h284M403 832h174M685 860h233M324 895h235M598 929h302M415 971h161" stroke-width="3"/>
+        </g>
+        <g stroke="#9bb09a" opacity=".63">
+          <path d="M107 675h222M55 716h268M108 755h205M72 811h237M107 858h181M38 918h297M170 957h209" stroke-width="2"/>
+        </g>
+      </g>
+
+      <!-- Lumenfall's tide bell: a watchtower on a solitary sea stack. -->
+      <path d="M571 626 602 578l29-23 27 20 38 51Z" fill="#a75f48"/>
+      <path d="m592 610 37-47 28 15 27 42Z" fill="#d27b50"/>
+      <path d="M614 598V391l16-24 17 24v207Z" fill="#174b4d"/>
+      <path d="M607 405h48v13h-48Z" fill="#174b4d"/>
+      <path d="M600 391 630 358l31 33Z" fill="#174b4d"/>
+      <path d="m623 359 7-38 8 38Z" fill="#174b4d"/>
+      <path d="M608 435h43v13h-43Z" fill="#174b4d"/>
+      <path d="M606 461h46v10h-46Z" fill="#174b4d" opacity=".9"/>
+      <path d="M621 385h20v15h-20Z" fill="#efb45e"/>
+      <path d="M630 387v12m-8-6h16" stroke="#174b4d" stroke-width="2"/>
+      <path d="M624 403c0-7 12-7 12 0v6h-12Z" fill="#e9a45f"/>
+      <path d="M627 409v8m6-8v8" stroke="#e9a45f" stroke-width="2"/>
+      <path d="M616 485h14v24h-14Zm21 0h14v24h-14Z" fill="#e9a45f" opacity=".88"/>
+      <path d="M614 513h39v9h-39Z" fill="#174b4d"/>
+      <path d="M628 554v-29h12v29" fill="#174b4d"/>
+      <path d="M597 580h68" stroke="#174b4d" stroke-width="5"/>
+      <path d="M600 603h64" stroke="#f1c67c" stroke-width="2" opacity=".7"/>
+
+      <!-- Foreground headlands frame the fjord without closing the horizon. -->
+      <path d="M0 664 92 649l73 40 69 4 38 44 80 22 37 67 45 43 15 155H0Z" fill="#174b4d"/>
+      <path d="m0 710 93-27 77 46 72 5 30 38 82 22 37 60-95-12-55-40-81-6-74-41-86 16Z" fill="#286365"/>
+      <path d="M1024 650 948 667l-64 42-81 12-38 47-67 20-28 50-48 36-18 155h420Z" fill="#174b4d"/>
+      <path d="m1024 706-77-16-69 43-80 9-32 41-70 24-34 48 91-8 56-37 78-6 68-39 69 13Z" fill="#286365"/>
+      <path d="M0 999h1024v25H0Z" fill="#123f43"/>
+
+      <!-- A handful of wind-bent coastal pines on the near cliffs. -->
+      <g fill="#123f43">
+        <path d="M118 722h8v57h-8Z M107 744l15-48 15 48-15-8Zm-8 17 23-47 24 47-24-9Z"/>
+        <path d="M900 727h7v48h-7Z M889 748l15-42 15 42-15-8Zm-6 14 21-43 20 43-20-8Z"/>
+        <path d="M250 770h6v37h-6Z M241 785l12-35 13 35-13-7Z"/>
+      </g>
+    </g>
+  </svg>
+  <h1 class="title">LUMENFALL</h1>
+  <p class="place-line">48° 12′ N&nbsp;&nbsp;·&nbsp;&nbsp;6° 04′ W</p>
+  <div class="grain"></div>
+  <div class="frame"></div>
+</main>
+</body>
+</html>
